@@ -1,0 +1,23 @@
+{% from "govuk/components/header/macro.njk" import govukHeader %}
+
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %}{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/assets/images/favicon.ico" sizes="any">
+    <link rel="stylesheet" href="/assets/css/application.css">
+    {% block stylesheets %}{% endblock %}
+</head>
+
+<body>
+{{ govukHeader({ homepageUrl: "/" }) }}
+<div class="govuk-width-container">
+    <main class="govuk-main-wrapper--auto-spacing">
+        {% block body %}{% endblock %}
+    </main>
+</div>
+</body>
+</html>

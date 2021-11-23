@@ -1,0 +1,180 @@
+[
+  {
+    "name": "HMP Altcourse",
+    "address": "Brookfield Drive, Fazakerley, Liverpool, L9 7LH",
+    "coordinates": [
+      53.4609,
+      -2.9360
+    ],
+    "categories": [
+      "B"
+    ]
+  },
+  {
+    "name": "HMP Ashfield",
+    "address": "Shortwood Road, Pucklechurch, Bristol, BS16 9QJ",
+    "coordinates": [
+      51.4824,
+      -2.4389
+    ],
+    "categories": [
+      "C"
+    ]
+  },
+  {
+    "name": "HMP/YOI Askham Grange",
+    "address": "Askham Richard, York, YO23 3FT",
+    "coordinates": [
+      53.9259,
+      -1.1841
+    ],
+    "categories": [
+      "Women's"
+    ]
+  },
+  {
+    "name": "HMP/YOI Aylesbury",
+    "address": "Bierton Road, Aylesbury, Bucks, HP20 1EH",
+    "coordinates": [
+      51.8226,
+      -0.8017
+    ],
+    "categories": [
+      "HMYOI"
+    ]
+  },
+  {
+    "name": "HMP Bedford",
+    "address": "St Loyes, Bedford, MK40 1HG",
+    "coordinates": [
+      52.1393,
+      -0.4702
+    ],
+    "categories": [
+      "B"
+    ]
+  },
+  {
+    "name": "HMP Belmarsh",
+    "address": "Western Way, London, SE28 0EB",
+    "coordinates": [
+      51.4969,
+      0.0927
+    ],
+    "categories": [
+      "A"
+    ]
+  },
+  {
+    "name": "HMP Berwyn",
+    "address": "Wrexham Industrial Estate, Bridge Rd N, Wrexham, LL13 9QE",
+    "coordinates": [
+      53.0352,
+      -2.9270
+    ],
+    "categories": [
+      "C"
+    ]
+  },
+  {
+    "name": "HMP Birmingham",
+    "address": "Winson Green Rd, Birmingham, B18 4AS",
+    "coordinates": [
+      52.4925,
+      -1.9385
+    ],
+    "categories": [
+      "B",
+      "C"
+    ]
+  },
+  {
+    "name": "HMP/YOI Brinsford",
+    "address": "New Rd, Featherstone, Wolverhampton, WV10 7PY",
+    "coordinates": [
+      52.6502,
+      -2.1124
+    ],
+    "categories": [
+      "B",
+      "C",
+      "HMYOI"
+    ]
+  },
+  {
+    "name": "HMP Bristol",
+    "address": "19 Cambridge Rd, Bishopston, Bristol, BS7 8PS",
+    "coordinates": [
+      51.4809,
+      -2.5916
+    ],
+    "categories": []
+  },
+  {
+    "name": "HMP Brixton",
+    "address": "Jebb Avenue, Brixton, London, SW2 5XF",
+    "coordinates": [
+      51.4518,
+      -0.1255
+    ],
+    "categories": [
+      "B"
+    ]
+  },
+  {
+    "name": "HMP Bronzefield",
+    "address": "Woodthorpe Rd, Ashford, TW15 3JZ",
+    "coordinates": [
+      51.4329,
+      -0.4828
+    ],
+    "categories": [
+      "Women's"
+    ]
+  },
+  {
+    "name": "HMP Buckley Hall",
+    "address": "Buckley Hall Road, Rochdale, OL12 9DP",
+    "coordinates": [
+      53.6350,
+      -2.1450
+    ],
+    "categories": [
+      "C"
+    ]
+  },
+  {
+    "name": "HMP Bullingdon",
+    "address": "Patrick Haugh Rd, Bicester, OX25 1PZ",
+    "coordinates": [
+      51.8485,
+      -1.0944
+    ],
+    "categories": [
+      "B",
+      "C"
+    ]
+  },
+  {
+    "name": "HMP Bure",
+    "address": "Jaguar Drive, Badersfield, Norwich, NR10 5GB",
+    "coordinates": [
+      52.7590,
+      1.3470
+    ],
+    "categories": [
+      "C"
+    ]
+  },
+  {
+    "name": "HMP Doncaster",
+    "address": "Marshgate, Doncaster, South Yorkshire, DN5 8UX",
+    "coordinates": [
+      53.5252,
+      -1.1450
+    ],
+    "categories": [
+      "B"
+    ]
+  }
+]

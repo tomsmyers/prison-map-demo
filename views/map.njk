@@ -1,0 +1,78 @@
+{% extends 'base.njk' %}
+
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{% block title %}Prison map demo{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="https://labs.os.uk/public/os-api-branding/v0.3.0/os-api-branding.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://api.tiles.mapbox.com/mapbox-gl-js/v1.13.1/mapbox-gl.css"/>
+{% endblock %}
+
+{% block body %}
+    <h1 class="govuk-heading-l">Prison map demo</h1>
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <div class=govuk-body id="map-container"
+                 style="position: relative; width: 100%; height: 500px; max-width: 800px">
+                <div id="map" style="position: absolute; width: 100%; top: 0; bottom: 0"></div>
+            </div>
+        </div>
+
+        <div class="govuk-grid-column-one-third">
+            <form method="post">
+                {{ govukCheckboxes(checkboxArgs) }}
+                {{ govukButton({
+                    text: "Apply filters",
+                    classes: "govuk-button--secondary"
+                }) }}
+            </form>
+        </div>
+    </div>
+
+    <script src="https://labs.os.uk/public/os-api-branding/v0.3.0/os-api-branding.js"></script>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v1.13.1/mapbox-gl.js"></script>
+    <script src="https://unpkg.com/mapbox-gl-leaflet/leaflet-mapbox-gl.js"></script>
+    <script>
+        const apiKey = '{{ osVectorTileApiKey }}';
+        const serviceUrl = 'https://api.os.uk/maps/vector/v1/vts';
+        const mapOptions = {
+            minZoom: 7,
+            maxZoom: 15,
+            center: [52.561928, -1.464854],
+            zoom: 7,
+            maxBounds: [
+                [49.528423, -7.056417],
+                [61.331151, 1.9134116]
+            ],
+            attributionControl: false
+        };
+        const map = L.map('map', mapOptions);
+        const gl = L.mapboxGL({
+            style: serviceUrl + '/resources/styles?key=' + apiKey,
+            transformRequest: url => {
+                return {
+                    url: url += '&srs=3857'
+                }
+            }
+        }).addTo(map);
+
+        const mojIcon = L.icon({
+            iconUrl: "https://www.gov.uk/assets/static/govuk-apple-touch-icon-180x180-ea1cbb1cbbeddfff275dfa6e8e46b84cd530892df79dc4882a8f99b802b49a90.png",
+            iconSize: [20, 20]
+        })
+
+        {% for prison in prisons %}
+        L.marker(
+            [{{ prison.coordinates[0] }}, {{ prison.coordinates[1] }}],
+            {icon: mojIcon}
+        )
+            .addTo(map)
+            .bindPopup("{{ prison.name }} - {{ prison.address }} ... <a href=#>Find out more</a>");
+        {% endfor %}
+    </script>
+{% endblock %}

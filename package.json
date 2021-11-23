@@ -1,0 +1,20 @@
+{
+  "name": "prison-map-demo",
+  "version": "0.1",
+  "scripts": {
+    "build:sass": "sass --no-source-map --load-path=node_modules/govuk-frontend ./assets/sass/application.sass:./assets/stylesheets/application.css --style compressed --quiet-deps",
+    "start": "node ./bin/www",
+    "start:watch": "npm run build:sass && nodemon --watch . -e njk,json,js -x npm run start"
+  },
+  "dependencies": {
+    "bunyan": "^1.8.15",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "govuk-frontend": "^3.14.0",
+    "http-errors": "~1.6.3",
+    "nodemon": "^2.0.15",
+    "nunjucks": "^3.2.3",
+    "sass": "^1.43.4"
+  }
+}

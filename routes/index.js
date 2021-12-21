@@ -5,20 +5,11 @@ const prisons = JSON.parse((fs.readFileSync('./data/prisons.json')).toString());
 
 const loadMap = function (req, res) {
     const categories = ['A', 'B', 'C', 'D', "Women's", 'HMYOI']
-    const selectedCategories = (req.method === 'POST') ? req.body['categories'] || [] : categories
-
-    const selectedPrisons = prisons.filter(prison => {
-        for (const category of prison["categories"]) {
-            if (selectedCategories.includes(category)) {
-                return true
-            }
-        }
-        return false
-    })
+    const selectedCategories = (req.method === 'POST') ? req.body['categories'] : categories
 
     res.render('map', {
         osVectorTileApiKey: process.env.OS_VECTOR_TILE_API_KEY,
-        prisons: selectedPrisons,
+        prisons: prisons,
         checkboxArgs: {
             idPrefix: "categories",
             name: "categories",
@@ -32,8 +23,7 @@ const loadMap = function (req, res) {
             items: categories.map(category => {
                 return {"value": category, "text": category, "checked": selectedCategories.includes(category)}
             })
-        }
-        ,
+        },
         selectedCategories,
     });
 }
